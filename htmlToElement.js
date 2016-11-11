@@ -19,10 +19,12 @@ function htmlToElement(rawHtml, opts, done) {
         if (rendered || rendered === null) return rendered
       }
 
-
       if (node.type == 'text') {
+
+        let isDefaultText = (!parent || (parent.name === 'p' && !(opts.styles['p'])))
+
         return (
-          <Text key={index} style={parent ? opts.styles[parent.name] : null}>
+          <Text key={index} style={isDefaultText ? [opts.styles.defaultStyle] : [opts.styles.defaultStyle, opts.styles[parent.name]]}>
             {entities.decodeHTML(node.data)}
           </Text>
         )
