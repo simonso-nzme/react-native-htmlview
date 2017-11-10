@@ -1,12 +1,13 @@
 import React from 'react'
 import { Image, Dimensions } from 'react-native'
+import createReactClass from 'create-react-class'
 
 var { width } = Dimensions.get('window')
 
 var baseStyle = {
   backgroundColor: 'transparent',
 }
-var ResizableImage = React.createClass({
+var ResizableImage = createReactClass({
   getInitialState: function() {
     return {
       // set width 1 is for preventing the warning

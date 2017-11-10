@@ -1,10 +1,11 @@
-import React, {Component, PropTypes} from 'react'
+import React, { Component } from 'react'
 import htmlToElement from './htmlToElement'
 import {
   Linking,
   StyleSheet,
   Text,
 } from 'react-native'
+import PropTypes from 'prop-types';
 
 const boldStyle = {fontWeight: '500'}
 const italicStyle = {fontStyle: 'italic'}
